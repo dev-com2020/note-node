@@ -15,12 +15,12 @@ console.log("Yargs",argv);
 
 if (command === 'add'){
     console.log('Dodawanie nowej notatki');
-    notes.addNote(argv.title, argv.body);
-    // if (note){
-    //     console.log('Notatka dodana!');
-    // } else {
-    //     console.log('Notatka o takiej nazwie już istnieje!');
-    // }
+    let note = notes.addNote(argv.title, argv.body);
+    if (note){
+        console.log('Notatka dodana!');
+    } else {
+        console.log('Notatka o takiej nazwie już istnieje!');
+    }
 }
     else if (command === 'list'){
         notes.getAll();
