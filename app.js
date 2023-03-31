@@ -4,14 +4,17 @@ const os = require('os');
 var user = os.userInfo();
 const notes = require('./notes');
 let res = notes.addNote();
-// const _ = require('lodash');
+const yargs = require('yargs');
 
+const argv = yargs.argv;
 let command = process.argv[2];
 console.log("Komenda:",command);
-console.log(process.argv);
+console.log("Proces:",process.argv);
+console.log("Yargs",argv);
 
 if (command === 'add'){
     console.log('Dodawanie nowej notatki');
+    notes.addNote(argv.title, argv.body);
 }
     else if (command === 'list'){
         console.log('Listowanie notatki');

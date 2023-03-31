@@ -5,7 +5,15 @@ console.log('Starting notes.js');
 
 // }
 
-module.exports.addNote = () => {
-    console.log('addNote');
-    return 'Nowa notatka!';
+let addNote = (title,body) => {
+    console.log('addNote', title, body);
+    let note = {
+        title,
+        body
+    };
+    
+};
+
+module.exports = {
+    addNote: addNote
 };
