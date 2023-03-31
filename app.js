@@ -24,7 +24,7 @@ if (command === 'add'){
         notes.getNote(argv.title);
     }
     else if (command === 'remove'){
-        console.log('Kasowanie notatki');
+        notes.removeNote(argv.title);
     }
     else {
         console.log('Nie rozpoznana komenda!');
