@@ -14,6 +14,16 @@ let addNote = (title,body) => {
     
 };
 
+let getAll = () =>{
+    console.log('Pobranie listy notatek...');
+}
+
+let getNote = (title) =>{
+    console.log('Pobieram notatkę: ',title);
+}
+
 module.exports = {
-    addNote: addNote
+    addNote,
+    getAll,
+    getNote
 };

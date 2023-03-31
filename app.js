@@ -8,7 +8,7 @@ const yargs = require('yargs');
 
 const argv = yargs.argv;
 let command = process.argv[2];
-console.log("Komenda:",command);
+// console.log("Komenda:",command);
 console.log("Proces:",process.argv);
 console.log("Yargs",argv);
 
@@ -17,10 +17,10 @@ if (command === 'add'){
     notes.addNote(argv.title, argv.body);
 }
     else if (command === 'list'){
-        console.log('Listowanie notatki');
+        notes.getAll();
     }
     else if (command === 'read'){
-        console.log('Odczyt notatki');
+        notes.getNote(argv.title);
     }
     else if (command === 'remove'){
         console.log('Kasowanie notatki');
