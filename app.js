@@ -6,7 +6,40 @@ const notes = require("./notes");
 let res = notes.addNote();
 const yargs = require("yargs");
 
-const argv = yargs.argv;
+const titleOptions = {
+    describe: "Tytuł notatki",
+    demand: true,
+    alias: "t",
+  };
+  const bodyOptions = {
+    describe: "Treść notatki",
+    demand: true,
+    alias: "b",
+  };
+
+const argv = yargs
+.command("add", "Dodaj nową notatkę", {
+  title: titleOptions,
+  body: bodyOptions,
+})
+.command("list", "Wyświetl wszystkie notatki")
+.command("read", "Wyświetl notatkę", {
+  title: titleOptions,
+})
+.command("remove", "Usuń notatkę", {
+  title: titleOptions,
+})
+.help()
+.argv;
+
+
+
+
+
+
+
+
+
 let command = process.argv[2];
 // console.log("Komenda:",command);
 console.log("Proces:", process.argv);
