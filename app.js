@@ -29,7 +29,9 @@ if (command === 'add'){
         notes.getNote(argv.title);
     }
     else if (command === 'remove'){
-        notes.removeNote(argv.title);
+        let noteRemoved = notes.removeNote(argv.title);
+        let message = noteRemoved ? 'Notatka została usunięta' : 'Notatka nie istnieje';
+        console.log(message);
     }
     else {
         console.log('Nie rozpoznana komenda!');

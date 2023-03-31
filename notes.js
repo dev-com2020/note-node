@@ -43,7 +43,11 @@ let getNote = (title) => {
 };
 
 let removeNote = (title) => {
-  console.log("Kasowanie notatki: ", title);
+  let notes = fetchNotes();
+  let filteredNotes = notes.filter((note) => note.title !== title);
+  saveNotes(filteredNotes);
+  return notes.length !== filteredNotes.length;
+  // console.log("Kasowanie notatki: ", title);
 };
 
 module.exports = {
