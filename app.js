@@ -17,17 +17,21 @@ if (command === "add") {
   let note = notes.addNote(argv.title, argv.body);
   if (note) {
     console.log("Notatka dodana!");
+    notes.logNote(note);
   } else {
     console.log("Notatka o takiej nazwie już istnieje!");
   }
 } else if (command === "list") {
-  notes.getAll();
+
+  let allNotes = notes.getAll();
+  console.log(`Wyświetlanie ${allNotes.length} notatek`);
+    allNotes.forEach((note) => notes.logNote(note));
+
 } else if (command === "read") {
   let note = notes.getNote(argv.title);
   if (note) {
     console.log("Notatka znaleziona!");
-    console.log("Tytuł: ", note.title);
-    console.log("Treść: ", note.body);
+    notes.logNote(note);
   } else {
     console.log("Notatka nie istnieje!");
   }

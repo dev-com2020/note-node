@@ -35,7 +35,7 @@ let addNote = (title, body) => {
 };
 
 let getAll = () => {
-  console.log("Pobranie listy notatek...");
+  return fetchNotes();
 };
 
 let getNote = (title) => {
@@ -52,9 +52,16 @@ let removeNote = (title) => {
   // console.log("Kasowanie notatki: ", title);
 };
 
+let logNote = (note) => {
+  console.log("---");
+  console.log(`Tytuł: ${note.title}`);
+  console.log(`Treść: ${note.body}`);
+};
+
 module.exports = {
   addNote,
   getAll,
   getNote,
   removeNote,
+  logNote
 };
