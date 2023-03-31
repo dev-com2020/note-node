@@ -12,6 +12,7 @@ let command = process.argv[2];
 console.log("Proces:",process.argv);
 console.log("Yargs",argv);
 
+
 if (command === 'add'){
     console.log('Dodawanie nowej notatki');
     notes.addNote(argv.title, argv.body);
@@ -28,6 +29,8 @@ if (command === 'add'){
     else {
         console.log('Nie rozpoznana komenda!');
     }
+
+    
 
 
 // console.log(res);
